@@ -3,8 +3,6 @@ const getComputerChoice = () => {
   return choices[Math.floor(Math.random() * 3)];
 };
 
-console.log(getComputerChoice());
-
 const singleRound = (playerSelection, computerSelection) => {
   computerSelection = getComputerChoice();
   let player = playerSelection.toLowerCase();
@@ -31,4 +29,11 @@ const singleRound = (playerSelection, computerSelection) => {
   }
 };
 
-console.log(singleRound("ScissorS"));
+const game = () => {
+  let sign = prompt("What's your sign?");
+  for (let i = 0; i < 5; i++) {
+    console.log(singleRound(sign));
+  }
+};
+
+game();
