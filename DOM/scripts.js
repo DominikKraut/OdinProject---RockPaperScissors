@@ -26,10 +26,27 @@ div2.style.border = "2px solid black";
 
 content.appendChild(div2);
 
-const h1 = createElement("h1");
+const h1 = document.createElement("h1");
 h1.textContent = "I'm in div!";
 div2.appendChild(h1);
 
-const paragraphDivider = createElement("p");
+const paragraphDivider = document.createElement("p");
 paragraphDivider.textContent = "ME TOO!";
 div2.appendChild(paragraphDivider);
+
+const btn = document.querySelector("#btn");
+btn.addEventListener("click", (e) => {
+  e.target.style.background = "blue";
+});
+
+const alertFunction = (phrase) => {
+  alert(phrase);
+};
+
+const allButtons = document.querySelectorAll("button");
+
+allButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    alert(button.id);
+  });
+});
